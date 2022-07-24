@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import './App.css';
+import TodoList from './pages/TodoList';
 
 const App = () => {
-  return <button>눌러!</button>
-}
+  return <TodoList />
+};
 
 export default App;

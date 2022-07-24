@@ -1,0 +1,10 @@
+.layout {
+  max-width: 1200px;
+  width: 1000px;
+  min-width: 800px;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top:10vh;
+}

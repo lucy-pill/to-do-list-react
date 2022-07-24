@@ -1,0 +1,40 @@
+.list {
+  margin-top: 20px;
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+}
+.list .todo--list {
+  width: 100%;
+  height: auto;
+}
+.list .todo--list .todo--list--title {
+  color: #50586c;
+  font-weight: 700;
+}
+.list .todo--list .todo--list--card {
+  margin: 20px 30px 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-around;
+  gap:15px;
+}
+.list .donedo--list {
+  width: 100%;
+  height: auto;
+}
+.list .donedo--list .donedo--list--title {
+  color: #50586c;
+  font-weight: 700;
+}
+.list .donedo--list .donedo--list--card {
+  margin: 20px 30px 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-around;
+  gap:15px;
+}
