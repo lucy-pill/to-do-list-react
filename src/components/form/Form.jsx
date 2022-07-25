@@ -22,10 +22,9 @@ const Form = ({ addTodo }) => {
     }
   };
 
-  if(window.event.keyCode === 13) {
-    addToDoList();
-  }
-
+  window.onkeydown = (event) => {
+    if (event.keyCode === 13) addToDoList();
+  };
 
   return (
     <div className="form">

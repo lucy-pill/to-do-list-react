@@ -1,6 +1,7 @@
 html {
 background: url('../public/img/background.jpg');
   background-size: cover;
+  background-repeat:repeat-y;
   overflow-x: hidden;
   overflow-y: auto;
 }
