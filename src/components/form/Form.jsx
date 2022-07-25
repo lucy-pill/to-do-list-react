@@ -22,6 +22,11 @@ const Form = ({ addTodo }) => {
     }
   };
 
+  if(window.event.keyCode === 13) {
+    addToDoList();
+  }
+
+
   return (
     <div className="form">
       <div className="input--grp">
