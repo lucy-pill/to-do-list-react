@@ -1,16 +1,15 @@
 import Header from '../header/Header';
 import Form from '../form/Form';
 import List from '../list/List';
-
-import './Layout.css';
+import { LayoutBox } from './Layout.styled';
 
 const Layout = () => {
   return (
-    <div className="layout">
+    <LayoutBox>
       <Header />
       <Form />
       <List />
-    </div>
+    </LayoutBox>
   );
 };
 

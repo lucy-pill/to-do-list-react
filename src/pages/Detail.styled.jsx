@@ -1,4 +1,6 @@
-.detail {
+import styled from 'styled-components';
+
+export const DetailBox = styled.div`
   margin-top: 50vh;
   transform: translateY(-200px);
   width: 400px;
@@ -9,8 +11,8 @@
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(7px);
   border-radius: 20px;
-}
-.detail .detail--header {
+`
+export const DetailBoxHeader = styled.div`
   border-radius: 20px 20px 0 0;
   width: 100%;
   height: 10%;
@@ -19,32 +21,30 @@
   align-items: center;
   justify-content: space-between;
   color: #f0edcc;
-}
-.detail .detail--header .id {
+`
+export const DetailBoxHeaderId = styled.span`
   margin-left: 5px;
-}
-.detail .detail--header .button {
+`
+
+export const DetailBoxHeaderButton = styled.span`
   margin-right: 5px;
-}
-.detail .detail--header .button:hover {
-  cursor: pointer;
-}
-.detail .todo--text {
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const DetailBoxTodo = styled.div`
   width: 100%;
   height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-.detail .todo--text .title {
+`
+
+export const DetailBoxTodoText = styled.span`
   word-break: break-all;
   color: #50586c;
   font-size: xx-large;
   margin-left: 10px;
-}
-.detail .todo--text .content {
-  word-break: break-all;
-  color: #50586c;
-  font-size: large;
-  margin-left: 10px;
-}
+`
+

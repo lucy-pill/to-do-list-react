@@ -1,4 +1,6 @@
-.layout {
+import styled from 'styled-components';
+
+export const LayoutBox = styled.div`
   max-width: 1200px;
   width: 1000px;
   min-width: 800px;
@@ -6,5 +8,5 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin-top:10vh;
-}
+  margin-top: 10vh;
+`;

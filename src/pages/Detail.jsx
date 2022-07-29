@@ -1,6 +1,14 @@
-import './Detail.css';
+import './Detail.styled.jsx';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
+import {
+  DetailBox,
+  DetailBoxHeader,
+  DetailBoxHeaderId,
+  DetailBoxHeaderButton,
+  DetailBoxTodo,
+  DetailBoxTodoText,
+} from './Detail.styled';
 
 const Detail = () => {
   const todos = [...useSelector((state) => state.todos.todos)];
@@ -8,18 +16,21 @@ const Detail = () => {
   const navigate = useNavigate();
   const todo = todos.filter((todo) => todo.id === id);
   return (
-    <div className="detail">
-      <div className="detail--header">
-        <span className='id'>ID: {id.slice(-4)}</span>
-        <span className="material-symbols-outlined button" onClick={() => navigate('/')}>
+    <DetailBox>
+      <DetailBoxHeader>
+        <DetailBoxHeaderId>ID: {id.slice(-4)}</DetailBoxHeaderId>
+        <DetailBoxHeaderButton
+          className="material-symbols-outlined"
+          onClick={() => navigate('/')}
+        >
           cancel
-        </span>
-      </div>
-      <div className="todo--text">
-        <span className="title">{todo[0].title}</span>
-        <span className="content">{todo[0].content}</span>
-      </div>
-    </div>
+        </DetailBoxHeaderButton>
+      </DetailBoxHeader>
+      <DetailBoxTodo>
+        <DetailBoxTodoText>{todo[0].title}</DetailBoxTodoText>
+        <DetailBoxTodoText>{todo[0].content}</DetailBoxTodoText>
+      </DetailBoxTodo>
+    </DetailBox>
   );
 };
 

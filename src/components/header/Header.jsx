@@ -1,11 +1,11 @@
-import './Header.css';
+import {HeaderBox} from './Header.styled';
 
 const Header = () => {
   return (
-    <div className="header">
+    <HeaderBox>
       <div>My Todo List</div>
       <div>React</div>
-    </div>
+    </HeaderBox>
   );
 };
 

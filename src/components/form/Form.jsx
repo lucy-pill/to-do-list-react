@@ -1,8 +1,16 @@
 import { useState } from 'react';
-import './Form.css';
-import uuid from 'react-uuid'
+import uuid from 'react-uuid';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../redux/modules/todos';
+import {
+  FormBox,
+  InputGroup,
+  InputBox,
+  InputBoxSpan,
+  Input,
+  ButtonGroup,
+  Button,
+} from './Form.styled';
 
 const Form = () => {
   const [inputTitle, setInputTitle] = useState('');
@@ -20,12 +28,14 @@ const Form = () => {
       alert('내용을 입력해주세요.');
       return false;
     } else {
-      dispatch(addTodo({
-        id: uuid(),
-        title: inputTitle,
-        content: inputContent,
-        isDone: false,
-      }));
+      dispatch(
+        addTodo({
+          id: uuid(),
+          title: inputTitle,
+          content: inputContent,
+          isDone: false,
+        })
+      );
       setInputTitle('');
       setInputContent('');
     }
@@ -36,34 +46,32 @@ const Form = () => {
   };
 
   return (
-    <div className="form">
-      <div className="input--grp">
-        <div className="title">
-          <span>제목</span>
-          <input
-            className="input--title"
+    <FormBox>
+      <InputGroup>
+        <InputBox>
+          <InputBoxSpan>제목</InputBoxSpan>
+          <Input
             type="text"
             value={inputTitle}
             onChange={(e) => setInputTitle(e.target.value)}
             maxLength="18"
           />
-        </div>
-        <div className="content">
-          <span>내용</span>
-          <input
-            className="input--content"
+        </InputBox>
+        <InputBox>
+          <InputBoxSpan>내용</InputBoxSpan>
+          <Input
             type="text"
             value={inputContent}
             onChange={(e) => setInputContent(e.target.value)}
             maxLength="40"
             required
           />
-        </div>
-      </div>
-      <div className="btn--add">
-        <button onClick={addToDoList}>추가하기</button>
-      </div>
-    </div>
+        </InputBox>
+      </InputGroup>
+      <ButtonGroup>
+        <Button onClick={addToDoList}>추가하기</Button>
+      </ButtonGroup>
+    </FormBox>
   );
 };
 

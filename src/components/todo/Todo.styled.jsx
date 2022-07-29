@@ -1,4 +1,6 @@
-.todo {
+import styled from 'styled-components';
+
+export const TodoBox = styled.div`
   width: 300px;
   height: 300px;
   display: flex;
@@ -7,28 +9,28 @@
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(7px);
   border-radius: 10px;
-}
-.todo .todo--text {
+`;
+export const TodoText = styled.div`
   width: 280px;
   margin: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  gap:20px;
+  gap: 20px;
   height: 200px;
-  max-height:200px;
-}
-.todo .todo--text .title {
-  word-break:break-all;
-  color: #50586C;
+  max-height: 200px;
+`;
+export const TodoTextTitle = styled.span`
+  word-break: break-all;
+  color: #50586c;
   font-size: xx-large;
-}
-.todo .todo--text .content {
-  word-break:break-all;
-  color: #50586C;
+`;
+export const TodoTextContent = styled.span`
+  word-break: break-all;
+  color: #50586c;
   font-size: large;
-}
-.todo .btn--todo {
+`;
+export const TodoButtonGroup = styled.div`
   display: flex;
   width: 100%;
   height: 100px;
@@ -36,19 +38,19 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-}
-.todo .btn--todo button {
+`;
+export const TodoButton = styled.button`
   width: 80px;
   height: 40px;
-  background-color: #50586C;
+  background-color: #50586c;
   font-weight: 700;
   border-radius: 20px;
-  color: #F0EDCC;
+  color: #f0edcc;
   border: none;
-}
-.todo .btn--todo button:hover {
-  background-color: #F0EDCC;
-  color: #50586C;
-  cursor: pointer;
-  transition: 0.1s;
-}
+  &:hover {
+    background-color: #f0edcc;
+    color: #50586c;
+    cursor: pointer;
+    transition: 0.1s;
+  }
+`;
