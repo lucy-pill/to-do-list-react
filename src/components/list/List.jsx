@@ -1,7 +1,10 @@
 import Todo from '../todo/Todo';
 import './List.css';
+import { useSelector } from 'react-redux';
 
-const List = ({ todos, deleteTodo, finishTodo, cancelTodo }) => {
+const List = () => {
+  useSelector((state) => state.todos.todos)
+  const todos = useSelector((state) => state.todos.todos);
   return (
     <div className="list">
       <div className="todo--list">
@@ -9,15 +12,7 @@ const List = ({ todos, deleteTodo, finishTodo, cancelTodo }) => {
         <div className="todo--list--card">
           {todos.map((todo) => {
             if (todo.isDone === false) {
-              return (
-                <Todo
-                  todo={todo}
-                  deleteTodo={deleteTodo}
-                  finishTodo={finishTodo}
-                  cancelTodo={cancelTodo}
-                  key={todo.id}
-                />
-              );
+              return <Todo todo={todo} key={todo.id} />;
             }
           })}
         </div>
@@ -27,15 +22,7 @@ const List = ({ todos, deleteTodo, finishTodo, cancelTodo }) => {
         <div className="donedo--list--card">
           {todos.map((todo) => {
             if (todo.isDone === true) {
-              return (
-                <Todo
-                  todo={todo}
-                  deleteTodo={deleteTodo}
-                  finishTodo={finishTodo}
-                  cancelTodo={cancelTodo}
-                  key={todo.id}
-                />
-              );
+              return <Todo todo={todo} key={todo.id} />;
             }
           })}
         </div>

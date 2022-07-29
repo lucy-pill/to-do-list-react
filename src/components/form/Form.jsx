@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import './Form.css';
+import uuid from 'react-uuid'
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../../redux/modules/todos';
 
-const Form = ({ addTodo }) => {
+const Form = () => {
   const [inputTitle, setInputTitle] = useState('');
   const [inputContent, setInputContent] = useState('');
+  const dispatch = useDispatch();
 
   const addToDoList = () => {
     if (inputTitle === '' && inputContent === '') {
@@ -16,7 +20,12 @@ const Form = ({ addTodo }) => {
       alert('내용을 입력해주세요.');
       return false;
     } else {
-      addTodo(inputTitle, inputContent);
+      dispatch(addTodo({
+        id: uuid(),
+        title: inputTitle,
+        content: inputContent,
+        isDone: false,
+      }));
       setInputTitle('');
       setInputContent('');
     }
